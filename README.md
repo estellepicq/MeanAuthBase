@@ -7,6 +7,8 @@ Base for Angular projects running with a Node.js back-end.
 ## Local setup
 
 Clone the project in a local directory: `git clone https://github.com/estellepicq/MeanAuthBase.git`
+**Prerequisites**: Node.js, MongoDB, Angular 6
+
 1. Angular project setup
 * Once you are in your local directory, go in Angular source folder: `cd front-src`
 * Run `npm install`
@@ -22,7 +24,7 @@ Clone the project in a local directory: `git clone https://github.com/estellepic
 ## Usage
 
 **Development**
-* In local directorty, run `node app.js`. It will launch server on port 3000.
+* In local directory, run `node app.js`. It will launch server on port 3000.
 * Go to front-src directory: `cd front-src`
 * Run `ng serve`
 * Navigate to `http://localhost:4200/`
