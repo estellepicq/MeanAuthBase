@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="col-lg-6 offset-lg-3">
+    <h2 class="page-header text-center">REGISTER</h2>
+    <form (ngSubmit)="onRegisterSubmit()">
+      <div class="form-group">
+        <label>Name*</label>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" (blur)="validateName()" (keyup)="validateName()">
+        <span *ngIf="msgName" class="text-danger">Please enter your name</span>
+      </div>
+      <div class="form-group">
+        <label>First Name*</label>
+        <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control" (blur)="validateFirstname()" (keyup)="validateFirstname()">
+        <span *ngIf="msgFirstname" class="text-danger">Please enter your firstname</span>
+      </div>
+      <div class="form-group">
+        <label>Username*</label>
+        <input type="text" [(ngModel)]="username" name="username" class="form-control" (blur)="validateUsername()" (keyup)="validateUsername()">
+        <span *ngIf="msgUsername" class="text-danger">Please enter your username</span>
+      </div>
+      <div class="form-group">
+        <label>Email*</label>
+        <input type="text" [(ngModel)]="email" name="email" class="form-control" (blur)="validateEmail()" (keyup)="validateEmail()">
+        <span *ngIf="msgEmail"  class="text-danger">Unvalid / already existing email address</span>
+      </div>
+      <div class="form-group">
+        <label>Password*</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" (blur)="validatePassword()" (keyup)="validatePassword()">
+        <span *ngIf="msgPassword"  class="text-danger">Not a valid password. Must contain: 8 caracters minimum with at least 1 number, 1 lowercase letter, 1 uppercase letter and 1 special caracter.</span>
+      </div>
+      <div class="form-group">
+        <label>Confirm your password*</label>
+        <input type="password" [(ngModel)]="passwordcheck" name="passwordcheck" class="form-control" (blur)="validatePasswordcheck()" (keyup)="validatePasswordcheck()">
+        <span *ngIf="msgPasswordcheck" class="text-danger">Please use the same password for confirmation</span>
+      </div>
+      <label>Birthday</label>
+      <div class="form-inline">
+        <div class="form-group mr-2">
+          <select [(ngModel)]="day" name="day" class="form-control">
+            <option *ngFor="let d of days">{{d}}</option>
+          </select>
+        </div>
+        <div class="form-group mr-2">
+          <select [(ngModel)]="month" name="month" class="form-control">
+            <option *ngFor="let m of months">{{m}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select [(ngModel)]="year" name="year" class="form-control">
+            <option *ngFor="let y of years">{{y}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select class="form-control" [(ngModel)]="gender" name="gender">
+          <option value="---" selected>---</option>
+          <option value="Man">Man</option>
+          <option value="Woman">Woman</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <input type="submit" class="btn btn-custom btn-block btn-lg" value="Register">
+    </form>
+    <div class="row mx-4 my-2">
+      <a routerLink="/register" class="mx-auto text-custom">Already have an account?</a>
+    </div>
+  </div>
+</div>

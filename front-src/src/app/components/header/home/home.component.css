@@ -1,0 +1,17 @@
+.background {
+  height: 95vh;
+  background-image: url('../../../../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover, auto;
+}
+
+.title {
+  font-size: 60px;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-top: 50px;
+}

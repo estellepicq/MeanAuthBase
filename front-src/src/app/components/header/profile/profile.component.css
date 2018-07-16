@@ -1,0 +1,7 @@
+.clickable:hover {
+  cursor: pointer;
+}
+
+table {
+  margin-top: 1rem;
+}

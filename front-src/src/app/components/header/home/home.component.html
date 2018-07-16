@@ -1,0 +1,19 @@
+<div class="background">
+  <header class="masthead text-center d-flex">
+    <div class="container my-auto">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <h1 class="text-custom title">
+            <strong>Welcome on MeanAuthBase</strong>
+          </h1>
+        </div>
+        <div class="col-lg-8 m-auto">
+          <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-lg btn-custom my-2 mr-2">Login</a>
+          <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-lg btn-custom my-2">Register</a>
+          <a *ngIf="authService.loggedIn()" routerLink="/profile" class="btn btn-lg btn-custom my-2 mr-2">Profile</a>
+          <a *ngIf="authService.loggedIn()" routerLink="/contact" class="btn btn-lg btn-custom my-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

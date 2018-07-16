@@ -1,0 +1,58 @@
+<div *ngIf="user">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 mb-3">
+        <button *ngIf="!editMode" (click)="activateEditMode()" class="btn btn-custom btn-block"><i class="fa fa-edit fa-lg"></i> Edit</button>
+        <button *ngIf="editMode" (click)="updateProfile()" class="btn btn-custom btn-block"><i class="fa fa-edit fa-lg"></i> Save</button>
+        <button *ngIf="editMode" (click)="cancelEditMode()" class="btn btn-secondary btn-block"><i class="fa fa-times fa-lg"></i> Cancel</button>
+      </div>
+      <div class="col-md-6 offset-md-1">
+        <h2 class="page-header text-center text-uppercase mb-4">{{user.firstname}} {{user.name}}</h2>
+        <table class="table table-light table-hover rounded-bottom">
+        	<tr>
+        	  <td><span>Username: </span>{{user.username}}</td>
+        	</tr>
+        	<tr>
+        	  <td><span>Email: </span>{{user.email}}</td>
+        	</tr>
+          <tr>
+            <td>
+              <span *ngIf="!editMode"><span>Birthday: </span>{{user.birthday}}</span>
+              <div *ngIf="editMode" class="form-inline">
+                <div class="form-group mr-2">
+                  <select [(ngModel)]="day" name="day" class="form-control">
+                    <option *ngFor="let d of days">{{d}}</option>
+                  </select>
+                </div>
+                <div class="form-group mr-2">
+                  <select [(ngModel)]="month" name="month" class="form-control">
+                    <option *ngFor="let m of months">{{m}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select [(ngModel)]="year" name="year" class="form-control">
+                    <option *ngFor="let y of years">{{y}}</option>
+                  </select>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span *ngIf="!editMode"><span>Gender: </span>{{user.gender}}</span>
+              <select *ngIf="editMode" class="form-control" [(ngModel)]="user.gender">
+                <option value="---">---</option>
+                <option value="Man">Man</option>
+                <option value="Woman">Woman</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><span>Registered since: </span>{{user.registrationDate}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

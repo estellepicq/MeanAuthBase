@@ -1,0 +1,7 @@
+.navbar-brand {
+  color: #fdb91a;
+}
+
+.navbar-brand.active-link {
+  color: #fdb91a;
+}

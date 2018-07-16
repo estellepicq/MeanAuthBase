@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="col-lg-6 offset-lg-3">
+    <h2 class="page-header text-center">CONTACT</h2>
+    <form (ngSubmit)="onContactSubmit()">
+      <div class="form-group">
+        <label>Subject*</label>
+        <input type="text" [(ngModel)]="subject" name="subject" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label>Message*</label>
+        <textarea rows="4" [(ngModel)]="message" name="message" class="form-control"></textarea>
+      </div>
+      <input type="submit" class="btn btn-custom btn-block btn-lg" value="Send">
+    </form>
+  </div>
+</div>
